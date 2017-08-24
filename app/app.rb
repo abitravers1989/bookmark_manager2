@@ -1,9 +1,27 @@
 
 require 'sinatra/base'
-require './app/models/link'
+require_relative './models/link.rb'
 
 
-class BookmarkManager
+class BookmarkManager < Sinatra::Base
 
-# run! if app_file == $0
+  enable :sessions
+
+  get '/links' do
+    @links = Link.all
+    erb :links
+  end
+
+  get '/links/new' do
+    erb :creating_links
+  end
+
+  post '/links' do
+    sessions[:url] = params[:url]
+    sessions[:title] = params[:title]
+    erb :creating_links
+  end
+
+#why do we POST to /links and not /links/new? Why do we GET links/new?
+
 end

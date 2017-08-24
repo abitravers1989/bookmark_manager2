@@ -2,7 +2,7 @@
 
  require './app/models/link'
 
- require './app/app'
+ require './app/app.rb'
 
  Capybara.app = BookmarkManager
 
