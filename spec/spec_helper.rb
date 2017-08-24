@@ -1,3 +1,5 @@
+ENV["RACK_ENV"] = "test"
+
  require 'capybara/rspec'
 
  require './app/models/link'
@@ -9,6 +11,7 @@
  require 'simplecov'
 
  require 'simplecov-console'
+
 
  Capybara.app = BookmarkManager
 

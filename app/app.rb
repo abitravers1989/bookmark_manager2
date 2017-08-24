@@ -2,6 +2,7 @@
 require 'sinatra/base'
 require_relative './models/link.rb'
 
+ENV["RACK_ENV"] ||= "development"
 
 class BookmarkManager < Sinatra::Base
 
@@ -17,7 +18,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/links' do
-    # Link.create(url: params[:url], title: params[:title])
+    Link.create(url: params[:url], title: params[:title])
     redirect '/links'
   end
 
