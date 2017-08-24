@@ -13,13 +13,12 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/links/new' do
-    erb :creating_links
+    erb :'links/new'
   end
 
   post '/links' do
-    sessions[:url] = params[:url]
-    sessions[:title] = params[:title]
-    erb :creating_links
+    # Link.create(url: params[:url], title: params[:title])
+    redirect '/links'
   end
 
 #why do we POST to /links and not /links/new? Why do we GET links/new?
