@@ -15,3 +15,15 @@ feature 'submitting new links' do
      end
   end
 end
+
+# feature 'Adding tags' do
+#   scenario 'I can add a tag to a new link' do
+#     visit '/links/new'
+#
+#     fill_in "title", :with => "mats of Meat"
+#     fill_in "url", :with => "www.hatsofmeat.com"
+#     fill_in "tag", :with => "lovers of meat"
+#
+#   click_button "Submit"
+#   link
+# end

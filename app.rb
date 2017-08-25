@@ -18,7 +18,9 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/links' do
-    Link.create(url: params[:url], title: params[:title])
+    link = Link.create(url: params[:url], title: params[:title])
+    tag = Tag.create(tname: params[:tname])
+    link.tags << tag 
     redirect '/links'
   end
 

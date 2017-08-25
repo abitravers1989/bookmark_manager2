@@ -12,6 +12,8 @@ ENV["RACK_ENV"] = "test"
 
  require 'simplecov-console'
 
+ require './data_mapper_setup.rb'
+
 
  Capybara.app = BookmarkManager
 
