@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.5.1)
-      public_suffix (~> 2.0, >= 2.0.2)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     ansi (1.5.0)
     ast (2.3.0)
     bcrypt (3.1.11)
@@ -15,8 +15,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    childprocess (0.7.1)
-      ffi (~> 1.0, >= 1.0.11)
     data_mapper (1.2.0)
       dm-aggregates (~> 1.2.0)
       dm-constraints (~> 1.2.0)
@@ -69,7 +67,6 @@ GEM
       data_objects (= 0.10.17)
     docile (1.1.5)
     fastercsv (1.5.5)
-    ffi (1.9.18)
     hirb (0.7.3)
     json (1.8.6)
     json_pure (1.8.6)
@@ -84,7 +81,7 @@ GEM
       ast (~> 2.2)
     pg (0.21.0)
     powerpack (0.1.1)
-    public_suffix (2.0.5)
+    public_suffix (3.0.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -114,10 +111,6 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
-    rubyzip (1.2.1)
-    selenium-webdriver (3.5.1)
-      childprocess (~> 0.5)
-      rubyzip (~> 1.0)
     simplecov (0.15.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -149,10 +142,8 @@ DEPENDENCIES
   dm-postgres-adapter
   pg
   rack
-  rake
   rspec
   rubocop
-  selenium-webdriver
   simplecov
   simplecov-console
   sinatra
