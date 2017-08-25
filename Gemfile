@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
 ruby '2.4.0'
-gem 'rake'
+
 gem 'sinatra'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'selenium-webdriver'
 gem 'database_cleaner'
 gem 'rack'
 gem 'pg'
