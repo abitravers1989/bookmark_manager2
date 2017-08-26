@@ -27,8 +27,8 @@ class BookmarkManager < Sinatra::Base
     link = Link.create(url: params[:url], title: params[:title])
     tag = Tag.first_or_create(name: params[:name])
     link.tags << tag
-    link.save
-    redirect to '/links'
+    Link.save
+    redirect to ('/links')
   end
 
 #why do we POST to /links and not /links/new? Why do we GET links/new?
