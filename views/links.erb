@@ -1,6 +1,11 @@
 <h1> Links </h1>
 
+<h3> Would you like to add a new link? </h3>
+<form action= '/links' method= "POST">
 
+<input type='submit' value='Add new link'>
+
+</form>
 
 <ul id='links'>
   <% @links.each do |link| %>

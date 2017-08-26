@@ -15,6 +15,10 @@ class BookmarkManager < Sinatra::Base
     erb :links
   end
 
+  post '/links' do
+    redirect to ('/links/new')
+  end
+
   get '/links/new' do
     erb :'links/new'
   end
@@ -24,7 +28,7 @@ class BookmarkManager < Sinatra::Base
     tag = Tag.first_or_create(name: params[:name])
     link.tags << tag
     link.save
-    redirect to ('/links')
+    redirect to '/links'
   end
 
 #why do we POST to /links and not /links/new? Why do we GET links/new?
