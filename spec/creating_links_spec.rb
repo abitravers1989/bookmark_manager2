@@ -29,3 +29,11 @@ feature 'Adding tags' do
     expect(link.tags.map(&:name)).to include("lovers of meat")
   end
 end
+
+feature 'Submit button for new link' do
+  scenario 'User can go through to the submit new links page' do
+    visit '/links'
+    click_button "Add new link"
+    expect(current_path).to eq '/links/new'
+  end 
+end
