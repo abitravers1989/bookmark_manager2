@@ -2,6 +2,7 @@
 require 'sinatra/base'
 require_relative './models/link.rb'
 require_relative './models/tag.rb'
+require_relative './data_mapper_setup.rb'
 
 ENV["RACK_ENV"] ||= "development"
 
@@ -20,9 +21,10 @@ class BookmarkManager < Sinatra::Base
 
   post '/links' do
     link = Link.create(url: params[:url], title: params[:title])
-    tag = Tag.create(tname: params[:tname])
+    tag = Tag.first_or_create(name: params[:name])
     link.tags << tag
-    redirect '/links'
+    link.save
+    redirect to ('/links')
   end
 
 #why do we POST to /links and not /links/new? Why do we GET links/new?
